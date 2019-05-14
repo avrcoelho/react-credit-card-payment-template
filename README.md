@@ -23,8 +23,8 @@ git format-patch origin/master --stdout > seu_nome.patch
 ## Requisitos
 
 * Não publique sua solução. Apenas nos envie o que desenvolveu.
-* Preencha o arquivo README.md com os detalhes, linha de raciocínio e dicas para os desenvolvedores que também irão trabalhar na sua aplicação.
 * Faça códigos legiveis e utilize uma arquitetura de fácil entendimento. 
+* Edite este Readme ou crie um novo Markdown explicando como um DEV deveria utilizar o projeto
 
 ## Bonus
 
