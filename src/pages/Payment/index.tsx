@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Payment: React.FC = () => <h1>Payment</h1>;
+import Header from '../../Components/Header';
+
+const Payment: React.FC = () => <Header />;
 
 export default Payment;
