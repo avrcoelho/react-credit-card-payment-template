@@ -13,8 +13,10 @@ const GlobalStyles = createGlobalStyle`
     background: #fff;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
-    font-family: sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 100%;
+    background-color: #F7F7F7
+
   }`;
 
 export default GlobalStyles;
