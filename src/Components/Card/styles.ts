@@ -12,7 +12,13 @@ export const Container = styled.div`
   top: 155px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
+`;
+
+export const Brand = styled.img`
+  width: 60px;
+  margin-left: 15px;
+  margin-top: 25px;
 `;
 
 export const CardInfo = styled.div`

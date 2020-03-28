@@ -2,17 +2,20 @@ import React from 'react';
 
 import {
   Container,
+  Brand,
   CardInfo,
   CardNumber,
   NameAndDate,
   CardName,
   CardExpirationDate,
 } from './styles';
+import brandIcon from '../../assets/images/brand.png';
 
 const Card: React.FC = () => (
   <Container>
+    <Brand src={brandIcon} alt="Brand" />
     <CardInfo>
-      <CardNumber>9999 9999 9999 8888</CardNumber>
+      <CardNumber>**** **** **** ****</CardNumber>
       <NameAndDate>
         <CardName>Nome do titutlar</CardName>
         <CardExpirationDate>00/00</CardExpirationDate>

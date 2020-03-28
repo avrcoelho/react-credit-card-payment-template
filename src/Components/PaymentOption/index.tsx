@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Card from '../Card';
+import CardForm from '../CardForm';
 
 import { Container, PaymentContainer, AddCard, TitleContainer } from './styles';
 import cardIcon from '../../assets/images/cardIcon.svg';
@@ -10,7 +11,7 @@ export const PaymentOption: React.FC = () => {
     <Container>
       <PaymentContainer>
         <AddCard>
-          <a href="#">
+          <a href="asdas">
             <i className="fa fa-angle-left"></i>
             <span>Alterar forma de pagamento</span>
           </a>
@@ -20,6 +21,7 @@ export const PaymentOption: React.FC = () => {
           </TitleContainer>
           <Card />
         </AddCard>
+        <CardForm />
       </PaymentContainer>
     </Container>
   );

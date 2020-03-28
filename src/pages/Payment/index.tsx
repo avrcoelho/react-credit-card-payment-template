@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Header from '../../Components/Header';
-import PaymentOption from '../../Components/PaymentOption';
+import Header from '../../components/Header';
+import PaymentOption from '../../components/PaymentOption';
 
 const Payment: React.FC = () => (
   <>
