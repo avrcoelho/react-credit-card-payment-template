@@ -1,46 +1,85 @@
-# Exame - Bexs Front-end
+# Template Pagamento com Cartão de Crédito
 
-## Desafio
+## Instalação
 
-Desenvolver uma aplicação front-end de acordo com as especificações descritas nos **requisitos** utilizando a _stack_ tecnologica de sua preferencia.
+_Tenha instalado em sua maquina o [Git](http://git-scm.com/) e [Node.js](http://nodejs.org/) 10.0.0 (ou superior). Caso prefira, instale o [Yarn](https://yarnpkg.com/)._
 
-- Desenvolva este Layout: https://xd.adobe.com/spec/9c4a9206-ac61-4050-796d-89c00fb79e91-ea7b
-- Utilize a tecnologia de sua preferencia (ReactJs, Angular, Angularjs, Vue.js, Jquery, Bootstrap, Material, Nodejs, Java, C#, PHP, etc).
+1. Fork este repositório e crie um novo branch — ou crie um novo branch caso tenha permissão.
 
-## Como entregar sua solução?
+2. Depois de obter sua cópia local, instale suas dependências:
 
-1. Clone do repositório
+   ```sh
+   npm install
+   ```
 
-2. Tente explicar a evolução do projeto em _commits_.
+   ou
 
-3. Caso use algum _task runner_/_module bundle_ - faça o commit da ultima versão build/bundle.
+   ```sh
+   yarn
+   ```
 
-4. Para nos enviar seu teste escolha uma das formas:
+## Execução
 
-### Gerar um patch:
+Após a instalação, você podera executar a aplicação em modo de desenvolvimento:
 
-Para gerar o patch:
-
+```sh
+npm start
 ```
-git format-patch origin/master --stdout > seu_nome.patch
+
+ou
+
+```sh
+yarn start
 ```
 
-Certifique que o patch irá funcionar executando >> `git apply seu_nome.patch` e nos envie através do email que entramos em contato
+_Isso iniciará o servidor em `localhost:3000`_
 
-### Criando um repositório público:
+## Build
 
-Crie um repositório em uma plataforma de pública de repositórios (GitHub, BitBucket, GitLab, etc) e nos envie através do email que entramos em contato.
+Execute:
 
-## Requisitos
+```sh
+npm run build
+```
 
-- Faça códigos legiveis e utilize uma arquitetura de fácil entendimento.
-- Edite este Readme ou crie um novo Markdown explicando como um DEV deveria utilizar o projeto
+ou
 
-## Bonus
+```sh
+yarn build
+```
 
-- Testes automatizados.
-- Crie uma camada que efetue uma chamada REST para um endpoint fictício "/pagar" - iremos analisar apenas a estrutura
+_Isso irá criar um diretório `build` na raiz, com a aplicacão preparada para ser executada em producão._
 
-## Dúvidas
+## Testes
 
-Entre em contato e nos questione.
+_Todos os arquivos de testes terminam com `.spec.tsx`_
+
+Use o seguinte comando para executar os testes:
+
+```sh
+npm test
+```
+
+ou
+
+```sh
+yarn test
+```
+
+_Caso deseja gerar os aquivos de Coverage, execute:_
+
+```sh
+npm run coverage
+```
+
+ou
+
+```sh
+yarn coverage
+```
+
+_Isso irá criar um diretório `__tests__` dentro do diretório `src` com os arquivos de Coverage_
+
+## Licença
+
+[MIT](https://opensource.org/licenses/MIT)
