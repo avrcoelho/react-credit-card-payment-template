@@ -42,6 +42,16 @@ export const Container = styled.div`
     background-image: url(${backCardEmpty});
     -webkit-transform: rotateY(-180deg);
     -moz-transform: rotateY(-180deg);
+    position: relative;
+
+    span {
+      position: absolute;
+      left: 126px;
+      top: 76px;
+      letter-spacing: 2px;
+      color: #3c3c3c;
+      font-size: 13px;
+    }
   }
 
   &.active .card__front {

@@ -30,7 +30,9 @@ const Card: React.FC = () => {
           </NameAndDate>
         </CardInfo>
       </div>
-      <div className="card__back card__part"></div>
+      <div className="card__back card__part">
+        <span>{cvv || '***'}</span>
+      </div>
     </Container>
   );
 };
