@@ -1,5 +1,7 @@
 # Template Pagamento com Cartão de Crédito
 
+![Demo](demo/template.gif)
+
 ## Instalação
 
 _Tenha instalado em sua maquina o [Git](http://git-scm.com/) e [Node.js](http://nodejs.org/) 10.0.0 (ou superior). Caso prefira, instale o [Yarn](https://yarnpkg.com/)._
