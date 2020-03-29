@@ -27,7 +27,7 @@ const CardForm: React.FC = () => {
   function sendToApi(data: object) {
     return new Promise((resolve) => {
       setTimeout(async () => {
-        await api.post('/test', data);
+        await api.post('/pagar', data);
 
         resolve();
       }, 2000);
