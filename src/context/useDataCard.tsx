@@ -5,10 +5,12 @@ interface IContext {
   cardNumber: string;
   expirate: string;
   cvv: string;
+  cvvFocus: boolean;
   setCardName: Function;
   setCardNumber: Function;
   setExpirate: Function;
   setCvv: Function;
+  setCvvFocus: Function;
 }
 
 export const DataCardContext = createContext<IContext>({
@@ -16,10 +18,12 @@ export const DataCardContext = createContext<IContext>({
   cardNumber: '',
   expirate: '',
   cvv: '',
+  cvvFocus: false,
   setCardName: Function,
   setCardNumber: Function,
   setExpirate: Function,
   setCvv: Function,
+  setCvvFocus: Function,
 });
 
 const DataCardProvider: React.FC = ({ children }) => {
@@ -27,6 +31,7 @@ const DataCardProvider: React.FC = ({ children }) => {
   const [cardNumber, setCardNumber] = useState<string>('');
   const [expirate, setExpirate] = useState<string>('');
   const [cvv, setCvv] = useState<string>('');
+  const [cvvFocus, setCvvFocus] = useState<boolean>(false);
 
   return (
     <DataCardContext.Provider
@@ -35,10 +40,12 @@ const DataCardProvider: React.FC = ({ children }) => {
         cardNumber,
         expirate,
         cvv,
+        cvvFocus,
         setCardName,
         setCardNumber,
         setExpirate,
         setCvv,
+        setCvvFocus,
       }}>
       {children}
     </DataCardContext.Provider>
@@ -57,10 +64,12 @@ export function useDataCard() {
     cardNumber,
     expirate,
     cvv,
+    cvvFocus,
     setCardName,
     setCardNumber,
     setExpirate,
     setCvv,
+    setCvvFocus,
   }: IContext = context;
 
   return {
@@ -68,9 +77,11 @@ export function useDataCard() {
     cardNumber,
     expirate,
     cvv,
+    cvvFocus,
     setCardName,
     setCardNumber,
     setExpirate,
     setCvv,
+    setCvvFocus,
   };
 }

@@ -1,18 +1,60 @@
 import styled from 'styled-components';
 
 import frontCardEmpty from '../../assets/images/frontCardEmpty.svg';
+import backCardEmpty from '../../assets/images/backCardEmpty.svg';
 
 export const Container = styled.div`
   width: 260px;
   height: 160px;
-  background-image: url(${frontCardEmpty});
-  background-size: cover;
+  -webkit-perspective: 600px;
+  -moz-perspective: 600px;
+  perspective: 600px;
   position: absolute;
   left: 28px;
   top: 155px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
+  .card__part {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    position: absolute;
+    -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+  }
+
+  .card__front {
+    background-image: url(${frontCardEmpty});
+    -webkit-transform: rotateY(0);
+    -moz-transform: rotateY(0);
+  }
+
+  .card__back {
+    background-image: url(${backCardEmpty});
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+  }
+
+  &.active .card__front {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+  }
+
+  &.active .card__back {
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+  }
 
   @media (max-width: 670px) {
     left: 0;

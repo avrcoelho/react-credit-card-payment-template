@@ -19,6 +19,7 @@ const CardForm: React.FC = () => {
     setCardNumber,
     setExpirate,
     setCvv,
+    setCvvFocus,
   } = useDataCard();
 
   async function handleSubmit(data: object) {
@@ -93,6 +94,7 @@ const CardForm: React.FC = () => {
               mask="999"
               value={cvv}
               setValue={(value: string) => setCvv(value)}
+              setFocus={(value: boolean) => setCvvFocus(value)}
             />
           </Col>
         </Row>

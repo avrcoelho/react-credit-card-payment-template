@@ -9,6 +9,7 @@ type Props = {
   mask: string;
   value: string;
   setValue: (value: string) => string;
+  setFocus?: (value: boolean) => boolean;
 };
 
 const TextInput: React.FC<Props> = ({
@@ -17,6 +18,7 @@ const TextInput: React.FC<Props> = ({
   mask,
   value,
   setValue,
+  setFocus,
   ...rest
 }) => {
   const inputRef = useRef(null);
@@ -47,6 +49,8 @@ const TextInput: React.FC<Props> = ({
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setValue(e.target.value)
         }
+        onFocus={() => name === 'cvv' && setFocus && setFocus(true)}
+        onBlur={() => name === 'cvv' && setFocus && setFocus(false)}
         {...rest}
       />
       <label htmlFor={name}>{label}</label>
