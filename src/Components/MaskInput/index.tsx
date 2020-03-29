@@ -46,6 +46,7 @@ const TextInput: React.FC<Props> = ({
         error={error}
         value={value}
         maskChar={null}
+        id={name}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setValue(e.target.value)
         }

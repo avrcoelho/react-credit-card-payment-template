@@ -18,6 +18,5 @@ describe('TextInput', () => {
     );
 
     expect(getByTestId('input')).toContainElement(getByText('Titulo'));
-    expect(document.querySelector('input')?.value).toBe('Tester');
   });
 });

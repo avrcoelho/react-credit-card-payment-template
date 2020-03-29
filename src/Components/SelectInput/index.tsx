@@ -24,7 +24,7 @@ const SelectInput: React.FC<Props> = ({ name, label, ...rest }) => {
 
   return (
     <InputContainer data-testid="selectinput">
-      <Select ref={inputRef} error={!!error} {...rest}>
+      <Select ref={inputRef} error={!!error} aria-label={label} {...rest}>
         {portions.map((portion: number) => (
           <option key={portion} value={portion}>
             {portion}

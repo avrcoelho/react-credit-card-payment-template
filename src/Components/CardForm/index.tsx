@@ -8,7 +8,6 @@ import SelectInput from '../SelectInput';
 import Stages from '../Stages';
 import { useDataCard } from '../../context/useDataCard';
 import api from '../../services/api';
-import { resolve } from 'dns';
 
 const CardForm: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -36,6 +35,7 @@ const CardForm: React.FC = () => {
   }
 
   async function handleSubmit(data: object) {
+    console.log(data);
     try {
       // Remove all previous errors
       formRef.current?.setErrors({});

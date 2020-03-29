@@ -37,8 +37,9 @@ const TextInput: React.FC<Props> = ({
         error={!!error}
         value={value}
         maxLength={max || undefined}
+        id={name}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          setValue(e.target.value)
+          console.log(e.target.value)
         }
         {...rest}
       />
