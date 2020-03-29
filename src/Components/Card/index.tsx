@@ -18,6 +18,7 @@ const Card: React.FC = () => {
 
   return (
     <Container
+      data-testid="card"
       className={cvvFocus ? 'active' : ''}
       cvv={cvv.length === 3}
       notEmptyCard={!!cardName && !!cardNumber && !!expirate}>

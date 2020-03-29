@@ -23,7 +23,7 @@ const SelectInput: React.FC<Props> = ({ name, label, ...rest }) => {
   }, [fieldName, registerField]);
 
   return (
-    <InputContainer>
+    <InputContainer data-testid="selectinput">
       <Select ref={inputRef} error={!!error} {...rest}>
         {portions.map((portion: number) => (
           <option key={portion} value={portion}>

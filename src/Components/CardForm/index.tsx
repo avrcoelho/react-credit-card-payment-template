@@ -23,7 +23,6 @@ const CardForm: React.FC = () => {
   } = useDataCard();
 
   async function handleSubmit(data: object) {
-    console.log(data);
     try {
       // Remove all previous errors
       formRef.current?.setErrors({});
@@ -62,7 +61,7 @@ const CardForm: React.FC = () => {
   return (
     <Container>
       <Stages />
-      <Form ref={formRef} onSubmit={handleSubmit}>
+      <Form ref={formRef} onSubmit={handleSubmit} data-testid="form">
         <MaskInput
           name="cardNumber"
           label="Número do cartão"

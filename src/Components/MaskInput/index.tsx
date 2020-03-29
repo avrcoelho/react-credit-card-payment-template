@@ -39,7 +39,7 @@ const TextInput: React.FC<Props> = ({
   }, [fieldName, registerField]);
 
   return (
-    <InputContainer>
+    <InputContainer data-testid="markinput">
       <Input
         mask={mask}
         ref={inputRef}

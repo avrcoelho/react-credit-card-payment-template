@@ -31,7 +31,7 @@ const TextInput: React.FC<Props> = ({
   }, [fieldName, registerField]);
 
   return (
-    <InputContainer>
+    <InputContainer data-testid="input">
       <Input
         ref={inputRef}
         error={!!error}
