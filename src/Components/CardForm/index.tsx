@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import * as Yup from 'yup';
 
 import { Container, Form, Row, Col, Button } from './styles';
@@ -7,8 +7,11 @@ import MaskInput from '../MaskInput';
 import SelectInput from '../SelectInput';
 import Stages from '../Stages';
 import { useDataCard } from '../../context/useDataCard';
+import api from '../../services/api';
+import { resolve } from 'dns';
 
 const CardForm: React.FC = () => {
+  const [loading, setLoading] = useState<boolean>(false);
   const formRef = useRef<any>(null);
   const {
     cardName,
@@ -21,6 +24,16 @@ const CardForm: React.FC = () => {
     setCvv,
     setCvvFocus,
   } = useDataCard();
+
+  function sendToApi(data: object) {
+    return new Promise((resolve) => {
+      setTimeout(async () => {
+        await api.post('/test', data);
+
+        resolve();
+      }, 2000);
+    });
+  }
 
   async function handleSubmit(data: object) {
     try {
@@ -45,8 +58,11 @@ const CardForm: React.FC = () => {
       await schema.validate(data, {
         abortEarly: false,
       });
+
       // Validation passed
-      console.log(data);
+      setLoading(true);
+      await sendToApi(data);
+      setLoading(false);
     } catch (err) {
       const validationErrors: any = {};
       if (err instanceof Yup.ValidationError) {
@@ -98,7 +114,13 @@ const CardForm: React.FC = () => {
           </Col>
         </Row>
         <SelectInput name="portion" label="Número de parcelas" />
-        <Button type="submit">Continuar</Button>
+        <Button type="submit">
+          {loading ? (
+            <i className="fa fa-spinner fa-pulse" data-testid="loading" />
+          ) : (
+            'Continuar'
+          )}
+        </Button>
       </Form>
     </Container>
   );
