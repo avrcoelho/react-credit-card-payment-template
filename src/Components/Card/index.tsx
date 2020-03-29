@@ -17,7 +17,10 @@ const Card: React.FC = () => {
   const { cardName, cardNumber, expirate, cvv, cvvFocus } = useDataCard();
 
   return (
-    <Container className={cvvFocus ? 'active' : ''}>
+    <Container
+      className={cvvFocus ? 'active' : ''}
+      cvv={cvv.length === 3}
+      notEmptyCard={!!cardName && !!cardNumber && !!expirate}>
       <div className="card__front card__part">
         <Brand>
           {cardNumber.length > 10 && <img src={brandIcon} alt="Brand" />}

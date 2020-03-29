@@ -1,7 +1,14 @@
 import styled from 'styled-components';
 
 import frontCardEmpty from '../../assets/images/frontCardEmpty.svg';
+import frontCard from '../../assets/images/frontCard.svg';
 import backCardEmpty from '../../assets/images/backCardEmpty.svg';
+import backCard from '../../assets/images/backCard.svg';
+
+type Props = {
+  cvv?: boolean;
+  notEmptyCard?: boolean;
+};
 
 export const Container = styled.div`
   width: 260px;
@@ -26,20 +33,26 @@ export const Container = styled.div`
     -ms-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     -o-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
+    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
   }
 
   .card__front {
-    background-image: url(${frontCardEmpty});
+    background-image: ${(props: Props) =>
+      props.notEmptyCard ? `url(${frontCard})` : `url(${frontCardEmpty})`};
+    transform: rotateY(0);
     -webkit-transform: rotateY(0);
     -moz-transform: rotateY(0);
   }
 
   .card__back {
-    background-image: url(${backCardEmpty});
+    background-image: ${(props: Props) =>
+      props.cvv ? `url(${backCard})` : `url(${backCardEmpty})`};
+    transform: rotateY(-180deg);
     -webkit-transform: rotateY(-180deg);
     -moz-transform: rotateY(-180deg);
     position: relative;
