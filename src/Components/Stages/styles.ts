@@ -13,6 +13,10 @@ export const Container = styled.div`
     width: calc(100% - 20px);
   }
 
+  @media (max-width: 670px) {
+    display: none;
+  }
+
   i {
     font-size: 22px;
     color: #de4b4b;

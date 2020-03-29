@@ -6,9 +6,20 @@ import TextInput from '../TextInput';
 import MaskInput from '../MaskInput';
 import SelectInput from '../SelectInput';
 import Stages from '../Stages';
+import { useDataCard } from '../../context/useDataCard';
 
 const CardForm: React.FC = () => {
   const formRef = useRef<any>(null);
+  const {
+    cardName,
+    cardNumber,
+    expirate,
+    cvv,
+    setCardName,
+    setCardNumber,
+    setExpirate,
+    setCvv,
+  } = useDataCard();
 
   async function handleSubmit(data: object) {
     console.log(data);
@@ -29,7 +40,7 @@ const CardForm: React.FC = () => {
         cvv: Yup.string()
           .matches(/^([0-9]{3})$/, 'Código inválido')
           .required('Digite o código'),
-        portion: Yup.string().required('Insira o número de parcelas'),
+        portion: Yup.number().required('Insira o número de parcelas'),
       });
       await schema.validate(data, {
         abortEarly: false,
@@ -55,14 +66,34 @@ const CardForm: React.FC = () => {
           name="cardNumber"
           label="Número do cartão"
           mask="9999 9999 9999 9999"
+          value={cardNumber}
+          setValue={(value: string) => setCardNumber(value)}
         />
-        <TextInput name="cardName" label="Nome (igual ao cartão)" />
+        <TextInput
+          name="cardName"
+          label="Nome (igual ao cartão)"
+          value={cardName}
+          setValue={(value: string) => setCardName(value)}
+          max={20}
+        />
         <Row>
           <Col>
-            <MaskInput name="expirate" label="Validade" mask="99/99" />
+            <MaskInput
+              name="expirate"
+              label="Validade"
+              mask="99/99"
+              value={expirate}
+              setValue={(value: string) => setExpirate(value)}
+            />
           </Col>
           <Col>
-            <MaskInput name="cvv" label="CVV" mask="999" />
+            <MaskInput
+              name="cvv"
+              label="CVV"
+              mask="999"
+              value={cvv}
+              setValue={(value: string) => setCvv(value)}
+            />
           </Col>
         </Row>
         <SelectInput name="portion" label="Número de parcelas" />

@@ -20,6 +20,12 @@ export const Form = styled(UnForm)`
   @media (max-width: 760px) {
     max-width: 300px;
   }
+
+  @media (max-width: 670px) {
+    align-items: center;
+    max-width: 100%;
+    margin-top: 80px;
+  }
 `;
 
 export const Button = styled.button`
@@ -31,6 +37,13 @@ export const Button = styled.button`
   text-transform: uppercase;
   cursor: pointer;
   margin-top: 20px;
+  font-weight: bold;
+
+  @media (max-width: 670px) {
+    width: 100%;
+    height: 50px;
+    font-size: 17px;
+  }
 `;
 
 export const Row = styled.div`

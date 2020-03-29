@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, memo } from 'react';
 import { useField } from '@unform/core';
 
 import { InputContainer, Select, Error } from './styles';
@@ -37,4 +37,4 @@ const SelectInput: React.FC<Props> = ({ name, label, ...rest }) => {
   );
 };
 
-export default SelectInput;
+export default memo(SelectInput);

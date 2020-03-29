@@ -13,12 +13,20 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 670px) {
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
 `;
 
-export const Brand = styled.img`
-  width: 60px;
-  margin-left: 15px;
-  margin-top: 25px;
+export const Brand = styled.div`
+  img {
+    width: 60px;
+    margin-left: 15px;
+    margin-top: 25px;
+  }
 `;
 
 export const CardInfo = styled.div`

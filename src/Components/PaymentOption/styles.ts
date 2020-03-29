@@ -17,6 +17,10 @@ export const PaymentContainer = styled.div`
   margin-top: 35px;
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 670px) {
+    flex-direction: column;
+  }
 `;
 
 export const AddCard = styled.div`
@@ -29,20 +33,60 @@ export const AddCard = styled.div`
   padding: 0 10px;
   position: relative;
 
-  a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 12px;
-    letter-spacing: -0.01px;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  @media (max-width: 670px) {
+    width: 100%;
+    height: 250px;
+  }
+`;
 
-    i {
-      font-size: 18px;
-      margin-right: 10px;
+export const BackAndStage = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+`;
+
+export const ButtonBack = styled.a`
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: -0.01px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @media (max-width: 670px) {
+    margin-top: 0;
+  }
+
+  i {
+    font-size: 18px;
+    margin-right: 10px;
+
+    @media (max-width: 670px) {
+      font-size: 30px;
     }
+  }
+
+  span {
+    @media (max-width: 670px) {
+      display: none;
+    }
+  }
+`;
+
+export const StagesMobile = styled.div`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 13px;
+  display: none;
+
+  @media (max-width: 670px) {
+    display: flex;
   }
 `;
 
@@ -57,6 +101,11 @@ export const TitleContainer = styled.div`
     height: 50px;
     margin-right: 15px;
     margin-left: 18px;
+
+    @media (max-width: 670px) {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   h3 {
