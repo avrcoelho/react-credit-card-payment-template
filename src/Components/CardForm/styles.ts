@@ -7,7 +7,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: flex-end;
   width: 100%;
-  padding: 20px 40px;
+  padding: 20px 40px 40px;
 `;
 
 export const Form = styled(UnForm)`

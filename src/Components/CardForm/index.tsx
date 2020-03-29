@@ -5,6 +5,7 @@ import { Container, Form, Row, Col, Button } from './styles';
 import TextInput from '../TextInput';
 import MaskInput from '../MaskInput';
 import SelectInput from '../SelectInput';
+import Stages from '../Stages';
 
 const CardForm: React.FC = () => {
   const formRef = useRef<any>(null);
@@ -48,6 +49,7 @@ const CardForm: React.FC = () => {
 
   return (
     <Container>
+      <Stages />
       <Form ref={formRef} onSubmit={handleSubmit}>
         <MaskInput
           name="cardNumber"

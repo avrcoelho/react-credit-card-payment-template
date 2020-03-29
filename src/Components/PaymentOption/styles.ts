@@ -11,7 +11,7 @@ export const Container = styled.div`
 export const PaymentContainer = styled.div`
   width: 100%;
   max-width: 800px;
-  height: 450px;
+  min-height: 460px;
   background-color: #fff;
   border: 1px solid #e6e6e6;
   margin-top: 35px;
