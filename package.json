@@ -23,8 +23,8 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test i  --env=jest-environment-jsdom-sixteen",
-    "coverage": "react-app-rewired test --coverage --watchAll=false",
+    "test": "react-app-rewired test --env=jest-environment-jsdom-sixteen",
+    "coverage": "react-app-rewired test --env=jest-environment-jsdom-sixteen --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
